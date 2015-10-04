@@ -1,1 +1,55 @@
+<div class="container">
+
+	<div class="row container">
+		<h1> This is a to-do list app</h1>
+		<button class="btn btn-success">button</button>
+	</div>
+
+	<div class="row">
+		<br />
+	</div>
+
+	<div class="row">
+
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+  				<div class="panel-body">
+
+    				<div class="col-xs-12">
+						<button class="btn btn-success">New</button>
+					</div>
+					<div class="col-xs-12">
+						<button class="btn btn-default">Save</button>
+					</div>
+					<div class="col-xs-12">
+						<button class="btn btn-danger">Delete All</button>
+					</div>
+
+  				</div>
+			</div>
+		</div>
+
+		<div class=" col-sm-8">
+			<div class="panel panel-default">
+
+				<div class="panel panel-header">
+					<input type="text" placeholder="What do you have to do?"/>
+				</div>
+
+  				<div class="panel-body">
+        			<ul class="list-group">
+          			<li class="list-group-item">
+            			<input type="checkbox" class="toggle">
+            			<label>Learn Ember.js</label>
+				 			<button class="btn"><span class="glyphicon glyphicon-remove-sign"></span></button>
+          			</li>
+					</ul>
+  				</div>
+
+			</div>
+		</div> <!-- end of the column -->
+
+	</div> <!-- end of row -->
+
+</div>
 {{outlet}}
