@@ -18,12 +18,6 @@
     				<div class="col-xs-12">
 						<button class="btn btn-success">New</button>
 					</div>
-					<div class="col-xs-12">
-						<button class="btn btn-default">Save</button>
-					</div>
-					<div class="col-xs-12">
-						<button class="btn btn-danger">Delete All</button>
-					</div>
 
   				</div>
 			</div>
@@ -38,11 +32,13 @@
 
   				<div class="panel-body">
         			<ul class="list-group">
+
           			<li class="list-group-item">
             			<input type="checkbox" class="toggle">
-            			<label>Learn Ember.js</label>
-				 			<button class="btn"><span class="glyphicon glyphicon-remove-sign"></span></button>
+            			<p>{{list.text}}</p>
+				 			<span class="btn glyphicon glyphicon-remove-sign pull-right">Remove</span>
           			</li>
+
 					</ul>
   				</div>
 
