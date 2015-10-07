@@ -2,7 +2,9 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
 	
-	text: 'This is a todo msg',
+	name: DS.attr('string', { defaultValue: 'item1.0'}),
+	text: DS.attr('string', {defaultValue: 'This is a to-do item'}),
+	done: DS.attr('boolean' , {defaultValue: false})
 	
   
 });

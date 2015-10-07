@@ -1,18 +1,26 @@
 import Ember from 'ember';
-import DS from 'ember-data';
 
 export default Ember.Controller.extend({
 
-  	list: Ember.computed.alias('model'),
+  	lists: Ember.computed.alias('model'),
+	list: Ember.computed.alias('lists.firstObject'),
 
 	actions: {
-		addItem(){
-			this.store.createRecord('list');
-			this.set('list');
+		addItem(text){
+			this.store.createRecord('list', {
+				text: text
+			});
 			this.save();
+
+		},
+		saveItem(item){
+			item.save();
 		},
 		removeItem(){
-			this.store.removeRecord('list');
+			this.get('list').destroyRecord();
+		},
+		viewItems(item){
+			this.set('list', item);
 		}
 	}
 });

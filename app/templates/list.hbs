@@ -1,45 +1,37 @@
 <div class="container">
 
-	<div class="row container">
-		<h1> This is a to-do list app</h1>
-		<button class="btn btn-success">button</button>
-	</div>
-
 	<div class="row">
-		<br />
+		{{input type="text" class="form-control" placeholder="What needs to be done?" value=text enter="addItem"}}
 	</div>
 
 	<div class="row">
 
-		<div class="col-sm-4">
-			<div class="panel panel-default">
-  				<div class="panel-body">
-
-    				<div class="col-xs-12">
-						<button class="btn btn-success">New</button>
-					</div>
-
-  				</div>
-			</div>
-		</div>
-
-		<div class=" col-sm-8">
+		<div class=" col-sm-8 centered">
 			<div class="panel panel-default">
 
 				<div class="panel panel-header">
-					<input type="text" placeholder="What do you have to do?"/>
+
 				</div>
 
   				<div class="panel-body">
-        			<ul class="list-group">
+					<form class="form-inline" role="form">
+        			<ul id="todo-list">
 
-          			<li class="list-group-item">
-            			<input type="checkbox" class="toggle">
-            			<p>{{list.text}}</p>
-				 			<span class="btn glyphicon glyphicon-remove-sign pull-right">Remove</span>
+						{{#each lists as |list|}}
+          			<li>
+							{{input type="checkbox" class="toggle" checked=list.done}}
+
+			            <label>{{list.text}}</label>
+							<button class="btn btn-warning" {{action 'saveItem' list}} >Save</button>
+							<button class="btn btn-danger glyphicon glyphicon-remove pull-right" {{action 'removeItem'}}></button>
+
           			</li>
+						{{else}}
+						<h3>Oh no! You have nothing to do!!!</h3>
+						{{/each}}
 
 					</ul>
+					</form>
   				</div>
 
 			</div>
